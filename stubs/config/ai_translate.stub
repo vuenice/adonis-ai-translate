@@ -1,0 +1,67 @@
+{{{
+  exports({
+    to: app.configPath('ai_translate.ts')
+  })
+}}}
+/**
+ * Configuration for adonis-ai-translate
+ *
+ * API keys are read from the environment:
+ * - ANTHROPIC_API_KEY
+ * - GEMINI_API_KEY
+ */
+const aiTranslateConfig = {
+  /*
+  |--------------------------------------------------------------------------
+  | Default AI Model
+  |--------------------------------------------------------------------------
+  |
+  | Shorthands: "claude", "gemini" — or pass an exact model id.
+  |
+  */
+  defaultModel: process.env.AI_TRANSLATE_MODEL || 'claude',
+
+  /*
+  |--------------------------------------------------------------------------
+  | Default Language
+  |--------------------------------------------------------------------------
+  |
+  | Base locale used as the source of truth (e.g. en.json).
+  |
+  */
+  defaultLanguage: process.env.AI_TRANSLATE_DEFAULT_LANGUAGE || 'en',
+
+  /*
+  |--------------------------------------------------------------------------
+  | Language File Path
+  |--------------------------------------------------------------------------
+  |
+  | Directory containing flat JSON locale files (en.json, fr.json, …).
+  | Leave undefined to use resources/lang under the app root.
+  |
+  */
+  langPath: process.env.AI_TRANSLATE_LANG_PATH || undefined,
+
+  /*
+  |--------------------------------------------------------------------------
+  | Dashboard Route Path
+  |--------------------------------------------------------------------------
+  */
+  path: process.env.AI_TRANSLATE_PATH || 'ai-translate',
+
+  /*
+  |--------------------------------------------------------------------------
+  | Dashboard Route Domain
+  |--------------------------------------------------------------------------
+  */
+  domain: process.env.AI_TRANSLATE_DOMAIN || null,
+
+  /*
+  |--------------------------------------------------------------------------
+  | Glossary Path
+  |--------------------------------------------------------------------------
+  */
+  glossaryPath: process.env.AI_TRANSLATE_GLOSSARY_PATH || undefined,
+}
+
+export default aiTranslateConfig
