@@ -1,0 +1,2 @@
+# Placeholder — dashboard UI is rendered as HTML from `src/dashboard_html.ts`
+# (CDN Tailwind + Alpine) for reliable dual Adonis 6/7 support without Edge packaging.

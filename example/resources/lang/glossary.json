@@ -1,0 +1,8 @@
+{
+  "never_translate": ["API", "AdonisJS"],
+  "specific_translations": {
+    "Dashboard": {
+      "fr": "Tableau de bord"
+    }
+  }
+}

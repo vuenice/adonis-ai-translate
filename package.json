@@ -1,0 +1,67 @@
+{
+  "name": "adonis-ai-translate",
+  "version": "0.1.0",
+  "description": "AI-powered translation management for AdonisJS — sync missing JSON lang keys with Claude or Gemini",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "adonisjs",
+    "adonisjs-package",
+    "i18n",
+    "translation",
+    "ai",
+    "claude",
+    "gemini"
+  ],
+  "engines": {
+    "node": ">=20.6.0",
+    "npm": ">=10.0.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./provider": {
+      "types": "./dist/providers/adonis_ai_translate_provider.d.ts",
+      "default": "./dist/providers/adonis_ai_translate_provider.js"
+    },
+    "./commands": {
+      "types": "./dist/commands/main.d.ts",
+      "default": "./dist/commands/main.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.js"
+    }
+  },
+  "files": [
+    "dist",
+    "resources",
+    "stubs",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@adonisjs/assembler": "^6.0.0 || ^7.0.0 || ^8.0.0",
+    "@adonisjs/core": "^6.0.0 || ^7.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@adonisjs/assembler": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.package.json",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc -p tsconfig.package.json --noEmit"
+  },
+  "devDependencies": {
+    "@adonisjs/core": "^7.3.1",
+    "@adonisjs/tsconfig": "^2.0.0",
+    "@types/node": "~22.13.14",
+    "typescript": "~5.8.3"
+  }
+}
